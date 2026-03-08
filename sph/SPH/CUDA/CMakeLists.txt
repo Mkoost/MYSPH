@@ -1,0 +1,17 @@
+file(GLOB CUDA_SOURCES CONFIGURE_DEPENDS "*.cu")
+
+add_library(SPH_CUDA OBJECT ${CUDA_SOURCES})
+
+set_target_properties(SPH_CUDA PROPERTIES
+    CUDA_SEPARABLE_COMPILATION ON
+    POSITION_INDEPENDENT_CODE ON
+    CUDA_STANDARD 17
+    CUDA_STANDARD_REQUIRED ON
+    CUDA_ARCHITECTURES "native"
+)
+
+target_include_directories(SPH_CUDA PUBLIC
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+target_link_libraries(SPH_CUDA PUBLIC CUDA::cudart)

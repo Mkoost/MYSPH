@@ -1,0 +1,13 @@
+{
+    "path": "./",
+    "name": "data",
+    "step_number": 1000,
+    "step_size": 0.001,
+    "optical_star": 0.223,
+    "dwarf_star": 0.91,
+    "smooth_lenght": 0.01,
+    "init_velocity": 1.0,
+    "density": 1.0,
+    "temperature": 1.0,
+    "standart_mass_flux": 7e-10
+}
